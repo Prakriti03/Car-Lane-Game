@@ -24,7 +24,7 @@ export class ObstacleCar {
   }
 
   draw() {
-    this.ctx.drawImage(this.img, 59, 260, 150, 284, this.x, this.y, OBSTACLE_CAR_WIDTH, OBSTACLE_CAR_HEIGHT);
+    this.ctx.drawImage(this.img, 407, 260, 150, 284, this.x, this.y, OBSTACLE_CAR_WIDTH, OBSTACLE_CAR_HEIGHT);
   }
 
   update() {
