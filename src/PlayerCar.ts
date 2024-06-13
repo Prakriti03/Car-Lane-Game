@@ -38,8 +38,6 @@ export class PlayerCar {
       this.updateAnimation();
     }
     this.ctx.drawImage(this.img, 59, 260, 150, 284, this.x, this.y, PLAYER_CAR_WIDTH, PLAYER_CAR_HEIGHT);
-    // this.ctx.fillStyle = "red";
-    // this.ctx.fillRect(this.x, this.y, PLAYER_CAR_WIDTH, PLAYER_CAR_HEIGHT);
   }
 
   updateAnimation() {

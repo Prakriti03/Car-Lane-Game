@@ -23,6 +23,5 @@ export class Score {
     this.ctx.fillStyle = "white";
     this.ctx.font = "22px Arial"
     this.ctx.fillText(`High Score : ${this.highScore}`, 10, 60);
-    // this.ctx.fillText(`Score: ${this.highScore} `, 10, 30);
   }
 }

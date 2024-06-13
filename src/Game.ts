@@ -44,7 +44,6 @@ import {
     draw() {
       this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
   
-      // Set background color to black
       this.ctx.fillStyle = "black";
       this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
   
@@ -53,7 +52,6 @@ import {
   
       this.playerCar.drawCar();
   
-      // Draw and update obstacle cars
       const now = performance.now();
       if (
         now - this.lastObstacleTime >
@@ -67,7 +65,6 @@ import {
         obstacle.update();
         obstacle.draw();
   
-        // Remove off-screen obstacles
         if (obstacle.isOffScreen()) {
           this.obstacles.splice(index, 1);
           this.score.increment();
@@ -90,19 +87,18 @@ import {
         return;
       }
   
-      const lanes = Array(LANE_COUNT).fill(true); // Initially assume all lanes are valid
+      const lanes = Array(LANE_COUNT).fill(true);
       this.obstacles.forEach((obstacle) => {
         if (obstacle.y < MIN_OBSTACLE_GAP) {
-          lanes[obstacle.lane] = false; // Mark lane as invalid if the obstacle is too close
+          lanes[obstacle.lane] = false; 
         }
       });
   
-      // Ensure at least one lane and a navigable path are always free
+      //To ensure availability of lane 
       const validLanes = lanes
         .map((isValid, index) => (isValid ? index : -1))
         .filter((index) => index !== -1);
       const navigableLanes = validLanes.filter((lane) => {
-        // Check if adjacent lanes are navigable
         const leftLaneFree =
           lane === 0 ||
           (lanes[lane - 1] &&
@@ -140,7 +136,7 @@ import {
         localStorage.setItem("highScore", this.highScore.toString());
       }
       alert(`Game Over! Your Final Score is ${this.score.score}. High Score : ${this.highScore}`);
-      window.location.reload(); // Restart the game
+      window.location.reload(); 
     }
   
     start() {

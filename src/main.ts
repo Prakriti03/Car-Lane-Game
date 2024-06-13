@@ -21,7 +21,6 @@ function startGame() {
 
 startButton.addEventListener("click", startGame);
 
-// Event listeners for player car movement
 window.addEventListener("keydown", (event) => {
   switch (event.key) {
     case "ArrowLeft":

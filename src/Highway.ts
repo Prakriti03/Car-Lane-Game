@@ -1,4 +1,3 @@
-// Highway.ts
 import { LANE_COUNT, LANE_WIDTH } from "./constants";
 
 export class Highway {
@@ -19,7 +18,6 @@ export class Highway {
   }
 
   draw() {
-    // Background
     this.ctx.fillStyle = '#474747';
     this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
 
